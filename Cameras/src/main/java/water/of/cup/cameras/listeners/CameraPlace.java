@@ -1,4 +1,4 @@
-package water.of.cup.cameras.listeners;
+package main.java.water.of.cup.cameras.listeners;
 
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;

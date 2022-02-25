@@ -1,12 +1,12 @@
-package water.of.cup.cameras.commands;
+package main.java.water.of.cup.cameras.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import water.of.cup.cameras.Camera;
-import water.of.cup.cameras.Picture;
+import main.java.water.of.cup.cameras.Camera;
+import main.java.water.of.cup.cameras.Picture;
 
 public class CameraCommands implements CommandExecutor {
 

@@ -1,4 +1,4 @@
-package water.of.cup.cameras;
+package main.java.water.of.cup.cameras;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -27,12 +27,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 
-import water.of.cup.cameras.bstats.Metrics;
-import water.of.cup.cameras.commands.CameraCommands;
-import water.of.cup.cameras.listeners.CameraClick;
-import water.of.cup.cameras.listeners.CameraPlace;
-import water.of.cup.cameras.listeners.PlayerJoin;
-import water.of.cup.cameras.listeners.PrepareItemCraft;
+import main.java.water.of.cup.cameras.bstats.Metrics;
+import main.java.water.of.cup.cameras.commands.CameraCommands;
+import main.java.water.of.cup.cameras.listeners.CameraClick;
+import main.java.water.of.cup.cameras.listeners.CameraPlace;
+import main.java.water.of.cup.cameras.listeners.PlayerJoin;
+import main.java.water.of.cup.cameras.listeners.PrepareItemCraft;
 
 public class Camera extends JavaPlugin {
 

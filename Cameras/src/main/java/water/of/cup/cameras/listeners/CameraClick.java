@@ -1,4 +1,4 @@
-package water.of.cup.cameras.listeners;
+package main.java.water.of.cup.cameras.listeners;
 
 import java.util.Map;
 
@@ -11,8 +11,8 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import water.of.cup.cameras.Camera;
-import water.of.cup.cameras.Picture;
+import main.java.water.of.cup.cameras.Camera;
+import main.java.water.of.cup.cameras.Picture;
 
 public class CameraClick implements Listener {
 

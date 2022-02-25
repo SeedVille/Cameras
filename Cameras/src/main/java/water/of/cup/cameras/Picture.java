@@ -1,4 +1,4 @@
-package water.of.cup.cameras;
+package main.java.water.of.cup.cameras;
 
 import java.util.HashMap;
 import org.bukkit.Bukkit;

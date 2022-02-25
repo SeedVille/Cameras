@@ -21,10 +21,32 @@
 		</plugins>
 	</build>
 	<repositories>
-		<!-- This adds the Spigot Maven repository to the build -->
+		<!-- This adds the Paper Maven repository to the build -->
 		<repository>
 			<id>spigot-repo</id>
 			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
+		<!-- This adds support for GameProfile -->
+		<repository>
+			<id>minecraft-repo</id>
+			<url>https://libraries.minecraft.net/</url>
+		</repository>
 	</repositories>
+
+	<dependencies>
+		<!--This adds the Paper API artifact to the build -->
+		<dependency>
+			<groupId>org.spigotmc</groupId>
+			<artifactId>spigot-api</artifactId>
+			<version>1.14.1-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- This adds support for GameProfile -->
+		<dependency>
+			<groupId>com.mojang</groupId>
+			<artifactId>authlib</artifactId>
+			<version>1.5.21</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 </project>

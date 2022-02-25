@@ -1,4 +1,4 @@
-package water.of.cup.cameras.bstats;
+package main.java.water.of.cup.cameras.bstats;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
