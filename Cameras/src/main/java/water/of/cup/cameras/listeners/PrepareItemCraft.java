@@ -1,5 +1,6 @@
 package main.java.water.of.cup.cameras.listeners;
 
+import main.java.water.of.cup.cameras.Camera;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.HumanEntity;
@@ -10,7 +11,6 @@ import org.bukkit.event.inventory.PrepareItemCraftEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.meta.ItemMeta;
-import main.java.water.of.cup.cameras.Camera;
 
 public class PrepareItemCraft implements Listener {
 
@@ -23,13 +23,13 @@ public class PrepareItemCraft implements Listener {
         ItemStack result = recipe.getResult();
         if (result == null) return;
         ItemMeta meta = result.getItemMeta();
-        if(meta == null) return;
+        if (meta == null) return;
 
-        if(meta.getDisplayName().equals(ChatColor.DARK_BLUE + "Camera")) {
-            if(instance.getConfig().getBoolean("settings.camera.permissions")) {
-                for(HumanEntity he : event.getViewers()) {
-                    if(he instanceof Player) {
-                        if(!he.hasPermission("cameras.craft")) {
+        if (meta.getDisplayName().equals(ChatColor.DARK_BLUE + "Camera")) {
+            if (instance.getConfig().getBoolean("settings.camera.permissions")) {
+                for (HumanEntity he : event.getViewers()) {
+                    if (he instanceof Player) {
+                        if (!he.hasPermission("cameras.craft")) {
                             event.getInventory().setResult(new ItemStack(Material.AIR));
                         }
                     }

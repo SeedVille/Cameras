@@ -14,7 +14,7 @@ public class MapStorage {
         String serializedData = serializeMapDataCompressed(data);
 
         File file = new File(Camera.getInstance().getDataFolder(), "maps/map_" + id + ".txt");
-        if(!file.exists()){
+        if (!file.exists()) {
             try {
                 file.createNewFile();
             } catch (IOException e1) {
@@ -30,24 +30,24 @@ public class MapStorage {
             e.printStackTrace();
         }
     }
-    
+
     public static String serializeMapDataCompressed(byte[][] data) {
         String outputString = "";
         int count = 1;
-        for(int i = 0; i < (128*128); i++) {
-            int row =  i / 128;
+        for (int i = 0; i < (128 * 128); i++) {
+            int row = i / 128;
             int column = i % 128;
-            int rownext = (i+1) / 128;
-            int colnext = (i+1) % 128;
+            int rownext = (i + 1) / 128;
+            int colnext = (i + 1) % 128;
 
             count = 1;
-            while(i < (128*128) - 1 && data[row][column] == data[rownext][colnext]) {
+            while (i < (128 * 128) - 1 && data[row][column] == data[rownext][colnext]) {
                 count++;
                 i++;
-                row =  i / 128;
+                row = i / 128;
                 column = i % 128;
-                rownext = (i+1) / 128;
-                colnext = (i+1) % 128;
+                rownext = (i + 1) / 128;
+                colnext = (i + 1) % 128;
             }
 
             outputString = outputString + data[row][column] + "_" + count + ",";
@@ -57,7 +57,7 @@ public class MapStorage {
 
     public static String serializeMapDataSimple(byte[][] data) {
         StringBuilder builder = new StringBuilder();
-        for(int i = 0; i < data.length; i++) {
+        for (int i = 0; i < data.length; i++) {
             for (int j = 0; j < data[i].length; j++) {
                 byte color = data[i][j];
 

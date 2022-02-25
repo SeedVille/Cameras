@@ -1,5 +1,29 @@
 package main.java.water.of.cup.cameras;
 
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
+import main.java.water.of.cup.cameras.bstats.Metrics;
+import main.java.water.of.cup.cameras.commands.CameraCommands;
+import main.java.water.of.cup.cameras.listeners.CameraClick;
+import main.java.water.of.cup.cameras.listeners.CameraPlace;
+import main.java.water.of.cup.cameras.listeners.PlayerJoin;
+import main.java.water.of.cup.cameras.listeners.PrepareItemCraft;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.map.MapCanvas;
+import org.bukkit.map.MapRenderer;
+import org.bukkit.map.MapView;
+import org.bukkit.plugin.java.JavaPlugin;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,32 +31,6 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.*;
 import java.util.regex.Pattern;
-
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.inventory.ShapedRecipe;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.SkullMeta;
-import org.bukkit.map.MapCanvas;
-import org.bukkit.map.MapRenderer;
-import org.bukkit.map.MapView;
-import org.bukkit.plugin.java.JavaPlugin;
-
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
-
-import main.java.water.of.cup.cameras.bstats.Metrics;
-import main.java.water.of.cup.cameras.commands.CameraCommands;
-import main.java.water.of.cup.cameras.listeners.CameraClick;
-import main.java.water.of.cup.cameras.listeners.CameraPlace;
-import main.java.water.of.cup.cameras.listeners.PlayerJoin;
-import main.java.water.of.cup.cameras.listeners.PrepareItemCraft;
 
 public class Camera extends JavaPlugin {
 
