@@ -485,6 +485,7 @@ public class Utils {
         blocksMap.put(Material.DARK_PRISMARINE_SLAB, new Color(92, 219, 213));
         blocksMap.put(Material.DARK_PRISMARINE_STAIRS, new Color(92, 219, 213));
         blocksMap.put(Material.END_PORTAL, new Color(25, 25, 25));
+        blocksMap.put(Material.END_GATEWAY, new Color(25, 25, 25));
         blocksMap.put(Material.END_PORTAL_FRAME, new Color(222, 215, 172));
         blocksMap.put(Material.BAMBOO, new Color(49, 101, 25));
         blocksMap.put(Material.BAMBOO_SAPLING, new Color(49, 101, 25));
