@@ -181,8 +181,16 @@ public class Camera extends JavaPlugin {
             getDataFolder().mkdir();
         }
 
-        saveDefaultConfig();
-        config = getConfig();
+        configFile = new File(getDataFolder(), "config.yml");
+        if (!configFile.exists()) {
+            try {
+                configFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        config = YamlConfiguration.loadConfiguration(configFile);
 
         HashMap<String, Object> defaultConfig = new HashMap<>();
 
