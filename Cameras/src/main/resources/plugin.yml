@@ -1,9 +1,9 @@
-main: main.java.cameras.Camera
+main: main.java.water.of.cup.cameras.Camera
 name: Cameras
 version: '1.05'
 description: Take Pictures.
 author: Nicholas Kopiwoda
-api-version: 1.14
+api-version: "1.17"
 commands:
   takepicture:
     description: take a picture

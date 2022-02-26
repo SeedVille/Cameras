@@ -1,9 +1,6 @@
 package main.java.water.of.cup.cameras;
 
-import org.bukkit.Bukkit;
-import org.bukkit.FluidCollisionMode;
-import org.bukkit.Location;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.map.MapCanvas;
 import org.bukkit.map.MapPalette;
@@ -11,6 +8,8 @@ import org.bukkit.map.MapRenderer;
 import org.bukkit.map.MapView;
 import org.bukkit.util.RayTraceResult;
 import org.bukkit.util.Vector;
+
+import java.awt.Color;
 
 public class Renderer extends MapRenderer {
     private Camera instance = Camera.getInstance();
@@ -83,7 +82,7 @@ public class Renderer extends MapRenderer {
                     canvasBytes[x][y] = color;
                 } else {
                     // no block was hit, so we will assume we are looking at the sky
-                    canvas.setPixel(x, y, MapPalette.PALE_BLUE);
+                    canvas.setPixel(x, y, MapPalette.matchColor(getSkyColor(player.getWorld())));
                     canvasBytes[x][y] = MapPalette.PALE_BLUE;
                 }
             }
@@ -94,4 +93,11 @@ public class Renderer extends MapRenderer {
 
         map.setLocked(true);
     }
+
+    private Color getSkyColor(World world) {
+        if (world.getName().contains("end")) return new Color(27, 18, 41);
+        if (world.getName().contains("nether")) return new Color(44, 7, 7);
+        return new Color(113, 156, 237);
+    }
+
 }

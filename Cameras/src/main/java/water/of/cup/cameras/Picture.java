@@ -10,6 +10,7 @@ import org.bukkit.map.MapRenderer;
 import org.bukkit.map.MapView;
 
 import java.util.HashMap;
+import java.util.concurrent.CompletableFuture;
 
 public class Picture {
     private static HashMap<Player, Long> delayMap = new HashMap<>();
@@ -40,7 +41,7 @@ public class Picture {
             return false;
         }
 
-        ItemStack itemStack = new ItemStack(Material.FILLED_MAP); // requires api-version: 1.13 in plugin.yml
+        ItemStack itemStack = new ItemStack(Material.FILLED_MAP);
         MapMeta mapMeta = (MapMeta) itemStack.getItemMeta();
         MapView mapView = Bukkit.createMap(p.getWorld());
 
@@ -58,4 +59,11 @@ public class Picture {
 
         return true;
     }
+
+    public static CompletableFuture<Boolean> takePictureAsync(Player p) {
+        CompletableFuture<Boolean> future = new CompletableFuture<>();
+        Bukkit.getScheduler().runTaskAsynchronously(Camera.getInstance(), () -> future.complete(takePicture(p)));
+        return future;
+    }
+
 }
