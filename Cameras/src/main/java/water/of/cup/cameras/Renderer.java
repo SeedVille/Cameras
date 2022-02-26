@@ -20,13 +20,24 @@ public class Renderer extends MapRenderer {
             return;
         }
 
+        boolean renderAsync = instance.getConfig().getBoolean("settings.camera.renderAsync");
+        if (renderAsync) {
+            Bukkit.getScheduler().runTaskAsynchronously(Camera.getInstance(), () -> renderMap(map, canvas, player));
+        } else {
+            renderMap(map, canvas, player);
+        }
+
+    }
+
+    private void renderMap(MapView map, MapCanvas canvas, Player player) {
+        Location eyes = player.getEyeLocation().clone();
+
         boolean transparentWater = instance.getConfig().getBoolean("settings.camera.transparentWater");
         boolean shadows = instance.getConfig().getBoolean("settings.camera.shadows");
 
         // get pitch and yaw of players head to calculate ray trace directions
-        Location eyes = player.getEyeLocation();
-        double pitch = -Math.toRadians(player.getEyeLocation().getPitch());
-        double yaw = Math.toRadians(player.getEyeLocation().getYaw() + 90);
+        double pitch = -Math.toRadians(eyes.getPitch());
+        double yaw = Math.toRadians(eyes.getYaw() + 90);
 
         byte[][] canvasBytes = new byte[128][128];
 
@@ -41,13 +52,13 @@ public class Renderer extends MapRenderer {
                 Vector rayTraceVector = new Vector(Math.cos(yaw + xrotate) * Math.cos(pitch + yrotate),
                         Math.sin(pitch + yrotate), Math.sin(yaw + xrotate) * Math.cos(pitch + yrotate));
 
-                RayTraceResult result = player.getWorld().rayTraceBlocks(eyes, rayTraceVector, 256);
+                RayTraceResult result = eyes.getWorld().rayTraceBlocks(eyes, rayTraceVector, 256);
 
                 // Color change for liquids
-                RayTraceResult liquidResult = player.getWorld().rayTraceBlocks(eyes, rayTraceVector, 256,
+                RayTraceResult liquidResult = eyes.getWorld().rayTraceBlocks(eyes, rayTraceVector, 256,
                         FluidCollisionMode.ALWAYS, false);
                 double[] dye = new double[]{1, 1, 1}; // values color is multiplied by
-                if (transparentWater == true) {
+                if (transparentWater) {
                     if (liquidResult != null) {
                         if (liquidResult.getHitBlock().getType().equals(Material.WATER))
                             dye = new double[]{.5, .5, 1};
@@ -68,7 +79,7 @@ public class Renderer extends MapRenderer {
                     }
 
                     byte color;
-                    if (transparentWater == true) {
+                    if (transparentWater) {
                         color = Utils.colorFromType(result.getHitBlock(), dye);
                     } else {
                         color = Utils.colorFromType(liquidResult.getHitBlock(), dye);
@@ -82,8 +93,9 @@ public class Renderer extends MapRenderer {
                     canvasBytes[x][y] = color;
                 } else {
                     // no block was hit, so we will assume we are looking at the sky
-                    canvas.setPixel(x, y, MapPalette.matchColor(getSkyColor(player.getWorld())));
-                    canvasBytes[x][y] = MapPalette.PALE_BLUE;
+                    byte skyColor = MapPalette.matchColor(getSkyColor(eyes.getWorld()));
+                    canvas.setPixel(x, y, skyColor);
+                    canvasBytes[x][y] = skyColor;
                 }
             }
         }
@@ -95,7 +107,8 @@ public class Renderer extends MapRenderer {
     }
 
     private Color getSkyColor(World world) {
-        if (world.getName().contains("end")) return new Color(27, 18, 41);
+        if (world == null) return new Color(113, 156, 237);
+        if (world.getName().contains("end")) return new Color(36, 20, 61);
         if (world.getName().contains("nether")) return new Color(44, 7, 7);
         return new Color(113, 156, 237);
     }

@@ -60,10 +60,4 @@ public class Picture {
         return true;
     }
 
-    public static CompletableFuture<Boolean> takePictureAsync(Player p) {
-        CompletableFuture<Boolean> future = new CompletableFuture<>();
-        Bukkit.getScheduler().runTaskAsynchronously(Camera.getInstance(), () -> future.complete(takePicture(p)));
-        return future;
-    }
-
 }

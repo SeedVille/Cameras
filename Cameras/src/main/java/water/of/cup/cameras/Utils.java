@@ -9,7 +9,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class Utils {
     static Map<Material, Color> blocksMap = new HashMap<>();
@@ -26,10 +25,25 @@ public class Utils {
         blocksMap.put(Material.LARGE_FERN, new Color(49, 101, 25));
         blocksMap.put(Material.FERN, new Color(49, 101, 25));
         blocksMap.put(Material.COBBLESTONE, new Color(130, 130, 130));
+        blocksMap.put(Material.INFESTED_COBBLESTONE, new Color(130, 130, 130));
+        blocksMap.put(Material.MOSSY_COBBLESTONE, new Color(130, 130, 130));
+        blocksMap.put(Material.MOSSY_COBBLESTONE_SLAB, new Color(130, 130, 130));
+        blocksMap.put(Material.MOSSY_COBBLESTONE_STAIRS, new Color(130, 130, 130));
+        blocksMap.put(Material.MOSSY_COBBLESTONE_WALL, new Color(130, 130, 130));
         blocksMap.put(Material.COBBLESTONE_STAIRS, new Color(130, 130, 130));
         blocksMap.put(Material.COBBLESTONE_SLAB, new Color(130, 130, 130));
         blocksMap.put(Material.FURNACE, new Color(130, 130, 130));
         blocksMap.put(Material.STONE, new Color(117, 117, 117));
+        blocksMap.put(Material.INFESTED_CHISELED_STONE_BRICKS, new Color(117, 117, 117));
+        blocksMap.put(Material.CHISELED_STONE_BRICKS, new Color(117, 117, 117));
+        blocksMap.put(Material.INFESTED_STONE, new Color(117, 117, 117));
+        blocksMap.put(Material.INFESTED_CRACKED_STONE_BRICKS, new Color(117, 117, 117));
+        blocksMap.put(Material.INFESTED_STONE_BRICKS, new Color(117, 117, 117));
+        blocksMap.put(Material.INFESTED_MOSSY_STONE_BRICKS, new Color(117, 117, 117));
+        blocksMap.put(Material.MOSSY_STONE_BRICKS, new Color(117, 117, 117));
+        blocksMap.put(Material.MOSSY_STONE_BRICK_SLAB, new Color(117, 117, 117));
+        blocksMap.put(Material.MOSSY_STONE_BRICK_STAIRS, new Color(117, 117, 117));
+        blocksMap.put(Material.MOSSY_STONE_BRICK_WALL, new Color(117, 117, 117));
         blocksMap.put(Material.STONE_SLAB, new Color(117, 117, 117));
         blocksMap.put(Material.IRON_ORE, new Color(117, 117, 117));
         blocksMap.put(Material.GOLD_ORE, new Color(117, 117, 117));
@@ -59,6 +73,7 @@ public class Utils {
         blocksMap.put(Material.DIRT, new Color(168, 120, 83));
         blocksMap.put(Material.SAND, new Color(222, 215, 172));
         blocksMap.put(Material.SANDSTONE, new Color(213, 207, 162));
+        blocksMap.put(Material.CHISELED_SANDSTONE, new Color(213, 207, 162));
         blocksMap.put(Material.ACACIA_LEAVES, new Color(44, 97, 22));
         blocksMap.put(Material.BIRCH_LEAVES, new Color(114, 149, 76));
         blocksMap.put(Material.DARK_OAK_LEAVES, new Color(46, 111, 17));
@@ -68,7 +83,13 @@ public class Utils {
         blocksMap.put(Material.DIRT_PATH, new Color(170, 148, 89));
         blocksMap.put(Material.COARSE_DIRT, new Color(104, 75, 51));
         blocksMap.put(Material.ANDESITE, new Color(136, 136, 138));
+        blocksMap.put(Material.POLISHED_ANDESITE, new Color(136, 136, 138));
+        blocksMap.put(Material.POLISHED_ANDESITE_STAIRS, new Color(136, 136, 138));
+        blocksMap.put(Material.POLISHED_ANDESITE_SLAB, new Color(136, 136, 138));
         blocksMap.put(Material.DIORITE, new Color(181, 181, 181));
+        blocksMap.put(Material.POLISHED_DIORITE, new Color(181, 181, 181));
+        blocksMap.put(Material.POLISHED_DIORITE_STAIRS, new Color(181, 181, 181));
+        blocksMap.put(Material.POLISHED_DIORITE_SLAB, new Color(181, 181, 181));
         blocksMap.put(Material.DEAD_BUSH, new Color(144, 97, 39));
         blocksMap.put(Material.CACTUS, new Color(76, 107, 35));
         blocksMap.put(Material.DANDELION, new Color(247, 229, 77));
@@ -78,14 +99,27 @@ public class Utils {
         blocksMap.put(Material.OXEYE_DAISY, new Color(187, 188, 189));
         blocksMap.put(Material.LAVA, new Color(211, 124, 40));
         blocksMap.put(Material.GRANITE, new Color(156, 111, 91));
+        blocksMap.put(Material.POLISHED_GRANITE, new Color(156, 111, 91));
+        blocksMap.put(Material.POLISHED_GRANITE_STAIRS, new Color(156, 111, 91));
+        blocksMap.put(Material.POLISHED_GRANITE_SLAB, new Color(156, 111, 91));
         blocksMap.put(Material.REDSTONE_LAMP, new Color(123, 73, 33));
         blocksMap.put(Material.GRAVEL, new Color(139, 135, 134));
         blocksMap.put(Material.SPRUCE_LOG, new Color(48, 34, 25));
         blocksMap.put(Material.OAK_LOG, new Color(58, 35, 9));
+        blocksMap.put(Material.STRIPPED_OAK_LOG, new Color(58, 35, 9));
+        blocksMap.put(Material.STRIPPED_OAK_WOOD, new Color(58, 35, 9));
         blocksMap.put(Material.BIRCH_LOG, new Color(196, 195, 193));
+        blocksMap.put(Material.STRIPPED_BIRCH_LOG, new Color(196, 195, 193));
+        blocksMap.put(Material.STRIPPED_BIRCH_WOOD, new Color(196, 195, 193));
         blocksMap.put(Material.JUNGLE_LOG, new Color(89, 76, 37));
+        blocksMap.put(Material.STRIPPED_JUNGLE_LOG, new Color(89, 76, 37));
+        blocksMap.put(Material.STRIPPED_JUNGLE_WOOD, new Color(89, 76, 37));
         blocksMap.put(Material.ACACIA_LOG, new Color(95, 95, 85));
+        blocksMap.put(Material.STRIPPED_ACACIA_LOG, new Color(95, 95, 85));
+        blocksMap.put(Material.STRIPPED_ACACIA_WOOD, new Color(95, 95, 85));
         blocksMap.put(Material.DARK_OAK_LOG, new Color(35, 27, 16));
+        blocksMap.put(Material.STRIPPED_DARK_OAK_LOG, new Color(35, 27, 16));
+        blocksMap.put(Material.STRIPPED_DARK_OAK_WOOD, new Color(35, 27, 16));
         blocksMap.put(Material.SPRUCE_PLANKS, new Color(100, 78, 47));
         blocksMap.put(Material.OAK_PLANKS, new Color(172, 140, 88));
         blocksMap.put(Material.OAK_TRAPDOOR, new Color(172, 140, 88));
@@ -230,19 +264,31 @@ public class Utils {
         blocksMap.put(Material.WATER, new Color(15, 94, 156));
         blocksMap.put(Material.COMMAND_BLOCK, new Color(198, 126, 78));
         blocksMap.put(Material.WEATHERED_COPPER, new Color(58, 142, 140));
+        blocksMap.put(Material.WAXED_WEATHERED_COPPER, new Color(58, 142, 140));
         blocksMap.put(Material.WEATHERED_CUT_COPPER, new Color(58, 142, 140));
+        blocksMap.put(Material.WAXED_WEATHERED_CUT_COPPER, new Color(58, 142, 140));
         blocksMap.put(Material.WEATHERED_CUT_COPPER_SLAB, new Color(58, 142, 140));
+        blocksMap.put(Material.WAXED_WEATHERED_CUT_COPPER_SLAB, new Color(58, 142, 140));
         blocksMap.put(Material.WEATHERED_CUT_COPPER_STAIRS, new Color(58, 142, 140));
+        blocksMap.put(Material.WAXED_WEATHERED_CUT_COPPER_STAIRS, new Color(58, 142, 140));
         blocksMap.put(Material.COPPER_BLOCK, new Color(186, 103, 75));
+        blocksMap.put(Material.WAXED_COPPER_BLOCK, new Color(186, 103, 75));
         blocksMap.put(Material.LIGHTNING_ROD, new Color(186, 103, 75));
         blocksMap.put(Material.RAW_COPPER_BLOCK, new Color(186, 103, 75));
         blocksMap.put(Material.CUT_COPPER, new Color(186, 103, 75));
+        blocksMap.put(Material.WAXED_CUT_COPPER, new Color(186, 103, 75));
         blocksMap.put(Material.CUT_COPPER_SLAB, new Color(186, 103, 75));
+        blocksMap.put(Material.WAXED_CUT_COPPER_SLAB, new Color(186, 103, 75));
         blocksMap.put(Material.CUT_COPPER_STAIRS, new Color(186, 103, 75));
+        blocksMap.put(Material.WAXED_CUT_COPPER_STAIRS, new Color(186, 103, 75));
         blocksMap.put(Material.EXPOSED_COPPER, new Color(135, 107, 98));
+        blocksMap.put(Material.WAXED_EXPOSED_COPPER, new Color(135, 107, 98));
         blocksMap.put(Material.EXPOSED_CUT_COPPER, new Color(135, 107, 98));
+        blocksMap.put(Material.WAXED_EXPOSED_CUT_COPPER, new Color(135, 107, 98));
         blocksMap.put(Material.EXPOSED_CUT_COPPER_SLAB, new Color(135, 107, 98));
+        blocksMap.put(Material.WAXED_EXPOSED_CUT_COPPER_SLAB, new Color(135, 107, 98));
         blocksMap.put(Material.EXPOSED_CUT_COPPER_STAIRS, new Color(135, 107, 98));
+        blocksMap.put(Material.WAXED_EXPOSED_CUT_COPPER_STAIRS, new Color(135, 107, 98));
         blocksMap.put(Material.HANGING_ROOTS, new Color(102, 72, 53));
         blocksMap.put(Material.WATER_CAULDRON, new Color(39, 39, 39));
         blocksMap.put(Material.LAVA_CAULDRON, new Color(39, 39, 39));
@@ -260,11 +306,15 @@ public class Utils {
         blocksMap.put(Material.LIGHT_WEIGHTED_PRESSURE_PLATE, new Color(243, 223, 75));
         blocksMap.put(Material.STONE_PRESSURE_PLATE, new Color(117, 117, 117));
 
+        blocksMap.put(Material.POLISHED_BASALT, new Color(25, 25, 25));
         blocksMap.put(Material.DEEPSLATE, new Color(35, 35, 39));
+        blocksMap.put(Material.CHISELED_DEEPSLATE, new Color(35, 35, 39));
+        blocksMap.put(Material.POLISHED_DEEPSLATE, new Color(35, 35, 39));
         blocksMap.put(Material.DEEPSLATE_BRICK_SLAB, new Color(35, 35, 39));
         blocksMap.put(Material.DEEPSLATE_BRICK_STAIRS, new Color(35, 35, 39));
         blocksMap.put(Material.DEEPSLATE_BRICK_WALL, new Color(35, 35, 39));
         blocksMap.put(Material.DEEPSLATE_BRICKS, new Color(35, 35, 39));
+        blocksMap.put(Material.INFESTED_DEEPSLATE, new Color(35, 35, 39));
         blocksMap.put(Material.CRACKED_DEEPSLATE_BRICKS, new Color(35, 35, 39));
         blocksMap.put(Material.DEEPSLATE_COAL_ORE, new Color(35, 35, 39));
         blocksMap.put(Material.DEEPSLATE_COPPER_ORE, new Color(35, 35, 39));
@@ -283,6 +333,9 @@ public class Utils {
         blocksMap.put(Material.COBBLED_DEEPSLATE_SLAB, new Color(35, 35, 39));
         blocksMap.put(Material.COBBLED_DEEPSLATE_STAIRS, new Color(35, 35, 39));
         blocksMap.put(Material.COBBLED_DEEPSLATE_WALL, new Color(35, 35, 39));
+        blocksMap.put(Material.POLISHED_DEEPSLATE_STAIRS, new Color(35, 35, 39));
+        blocksMap.put(Material.POLISHED_DEEPSLATE_SLAB, new Color(35, 35, 39));
+        blocksMap.put(Material.POLISHED_DEEPSLATE_WALL, new Color(35, 35, 39));
 
         blocksMap.put(Material.STONE_BRICKS, new Color(117, 117, 117));
         blocksMap.put(Material.STONE_BRICK_SLAB, new Color(117, 117, 117));
@@ -307,6 +360,8 @@ public class Utils {
         blocksMap.put(Material.RED_NETHER_BRICK_WALL, new Color(65, 5, 7));
 
         blocksMap.put(Material.NETHER_BRICKS, new Color(112, 2, 0));
+        blocksMap.put(Material.CHISELED_NETHER_BRICKS, new Color(112, 2, 0));
+        blocksMap.put(Material.CRACKED_NETHER_BRICKS, new Color(112, 2, 0));
         blocksMap.put(Material.NETHER_BRICK_SLAB, new Color(112, 2, 0));
         blocksMap.put(Material.NETHER_BRICK_STAIRS, new Color(112, 2, 0));
         blocksMap.put(Material.NETHER_BRICK_WALL, new Color(112, 2, 0));
@@ -317,9 +372,11 @@ public class Utils {
         blocksMap.put(Material.SMOOTH_SANDSTONE_SLAB, new Color(213, 207, 162));
         blocksMap.put(Material.SMOOTH_SANDSTONE_STAIRS, new Color(213, 207, 162));
         blocksMap.put(Material.SMOOTH_RED_SANDSTONE, new Color(203, 110, 36));
+        blocksMap.put(Material.CHISELED_RED_SANDSTONE, new Color(203, 110, 36));
         blocksMap.put(Material.SMOOTH_RED_SANDSTONE_SLAB, new Color(203, 110, 36));
         blocksMap.put(Material.SMOOTH_RED_SANDSTONE_STAIRS, new Color(203, 110, 36));
         blocksMap.put(Material.SMOOTH_QUARTZ, new Color(238, 230, 222));
+        blocksMap.put(Material.CHISELED_QUARTZ_BLOCK, new Color(238, 230, 222));
         blocksMap.put(Material.SMOOTH_QUARTZ_SLAB, new Color(238, 230, 222));
         blocksMap.put(Material.SMOOTH_QUARTZ_STAIRS, new Color(238, 230, 222));
         blocksMap.put(Material.GLOW_LICHEN, new Color(109, 124, 119));
@@ -397,12 +454,14 @@ public class Utils {
         blocksMap.put(Material.END_ROD, new Color(255, 255, 255));
 
         blocksMap.put(Material.POLISHED_BLACKSTONE_BRICK_SLAB, new Color(25, 25, 25));
+        blocksMap.put(Material.CHISELED_POLISHED_BLACKSTONE, new Color(25, 25, 25));
         blocksMap.put(Material.POLISHED_BLACKSTONE_BRICK_STAIRS, new Color(25, 25, 25));
         blocksMap.put(Material.POLISHED_BLACKSTONE_BRICK_WALL, new Color(25, 25, 25));
         blocksMap.put(Material.POLISHED_BLACKSTONE_BUTTON, new Color(25, 25, 25));
         blocksMap.put(Material.POLISHED_BLACKSTONE_BRICKS, new Color(25, 25, 25));
         blocksMap.put(Material.POLISHED_BLACKSTONE_PRESSURE_PLATE, new Color(25, 25, 25));
         blocksMap.put(Material.POLISHED_BLACKSTONE_WALL, new Color(25, 25, 25));
+        blocksMap.put(Material.POLISHED_BLACKSTONE, new Color(25, 25, 25));
         blocksMap.put(Material.CRACKED_POLISHED_BLACKSTONE_BRICKS, new Color(25, 25, 25));
         blocksMap.put(Material.GILDED_BLACKSTONE, new Color(25, 25, 25));
         blocksMap.put(Material.BLACKSTONE, new Color(25, 25, 25));
@@ -411,9 +470,13 @@ public class Utils {
         blocksMap.put(Material.BLACKSTONE_WALL, new Color(25, 25, 25));
         blocksMap.put(Material.TWISTING_VINES, new Color(22, 126, 134));
         blocksMap.put(Material.TWISTING_VINES_PLANT, new Color(22, 126, 134));
+        blocksMap.put(Material.STRIPPED_WARPED_HYPHAE, new Color(22, 126, 134));
+        blocksMap.put(Material.STRIPPED_WARPED_STEM, new Color(22, 126, 134));
         blocksMap.put(Material.NETHER_SPROUTS, new Color(22, 126, 134));
         blocksMap.put(Material.WEEPING_VINES, new Color(123, 0, 0));
         blocksMap.put(Material.WEEPING_VINES_PLANT, new Color(123, 0, 0));
+        blocksMap.put(Material.STRIPPED_CRIMSON_STEM, new Color(123, 0, 0));
+        blocksMap.put(Material.STRIPPED_CRIMSON_HYPHAE, new Color(123, 0, 0));
         blocksMap.put(Material.NETHER_WART, new Color(123, 0, 0));
         blocksMap.put(Material.NETHER_WART_BLOCK, new Color(123, 0, 0));
         blocksMap.put(Material.MAGMA_BLOCK, new Color(112, 2, 0));
@@ -439,15 +502,18 @@ public class Utils {
         blocksMap.put(Material.LIGHT_BLUE_BED, new Color(102, 153, 216));
         blocksMap.put(Material.BLUE_BED, new Color(51, 76, 178));
         blocksMap.put(Material.ORANGE_BED, new Color(216, 127, 51));
+        blocksMap.put(Material.YELLOW_STAINED_GLASS_PANE, new Color(229, 229, 51));
+        blocksMap.put(Material.BLUE_STAINED_GLASS_PANE, new Color(51, 76, 178));
+        blocksMap.put(Material.ORANGE_STAINED_GLASS_PANE, new Color(216, 127, 51));
         blocksMap.put(Material.BELL, new Color(243, 223, 75));
         blocksMap.put(Material.RAIL, new Color(143, 119, 72));
         blocksMap.put(Material.ACTIVATOR_RAIL, new Color(143, 119, 72));
         blocksMap.put(Material.DETECTOR_RAIL, new Color(143, 119, 72));
         blocksMap.put(Material.POWERED_RAIL, new Color(143, 119, 72));
-        blocksMap.put(Material.PURPUR_BLOCK, new Color(99, 71, 101));
-        blocksMap.put(Material.PURPUR_PILLAR, new Color(99, 71, 101));
-        blocksMap.put(Material.PURPUR_SLAB, new Color(99, 71, 101));
-        blocksMap.put(Material.PURPUR_STAIRS, new Color(99, 71, 101));
+        blocksMap.put(Material.PURPUR_BLOCK, new Color(127, 63, 178));
+        blocksMap.put(Material.PURPUR_PILLAR, new Color(127, 63, 178));
+        blocksMap.put(Material.PURPUR_SLAB, new Color(127, 63, 178));
+        blocksMap.put(Material.PURPUR_STAIRS, new Color(127, 63, 178));
         blocksMap.put(Material.HOPPER, new Color(112, 112, 112));
         blocksMap.put(Material.AZALEA_LEAVES, new Color(49, 111, 21));
         blocksMap.put(Material.AZALEA, new Color(49, 111, 21));
@@ -507,10 +573,9 @@ public class Utils {
     @SuppressWarnings("deprecation")
     public static byte colorFromType(Block block, double[] dye) {
         HashMap<Material, BufferedImage> imageMap = Camera.getInstance().getResourcePackManager().getImageHashMap();
-        Material type = getEquivalentType(block.getType());
-        if (blocksMap.containsKey(type)) {
+        if (blocksMap.containsKey(block.getType())) {
             // if blockMap has a color for the material, use that color
-            Color color = blocksMap.get(type);
+            Color color = blocksMap.get(block.getType());
             int redColor = (int) (color.getRed() * dye[0]);
             int greenColor = (int) (color.getGreen() * dye[1]);
             int blueColor = (int) (color.getBlue() * dye[2]);
@@ -520,11 +585,11 @@ public class Utils {
             if (blueColor > 255) blueColor = 255;
             return MapPalette.matchColor(new Color(redColor, greenColor, blueColor));
         }
-        if (imageMap.containsKey(type)) {
+        if (imageMap.containsKey(block.getType())) {
             // if imageMap has a color for the material, use that color
-            BufferedImage image = imageMap.get(type);
+            BufferedImage image = imageMap.get(block.getType());
             if (image == null) {
-                Bukkit.getLogger().info("Missing Image For: " + type);
+                Bukkit.getLogger().info("Missing Image For: " + block.getType());
             } else {
                 // gets certain pixel in image to use as color TODO: Create a hashmap of colors
                 // so we don't need to access the image multiple times.
@@ -542,34 +607,6 @@ public class Utils {
             }
         }
         return MapPalette.GRAY_2; // no color was found, use gray
-    }
-
-    //method to cut down number of cached materials in blocksMap.
-    private static Material getEquivalentType(Material type) {
-        if (blocksMap.containsKey(type)) return type; //in case of exceptions
-        Set<String> toIgnore = Set.of(
-                "infested_",
-                "mossy_",
-                "waxed_",
-                "stripped_",
-                "polished_",
-                "chiseled_",
-                "cracked_",
-                "_wall",
-                "_pane",
-                "_powder"
-        );
-        String name = type.name().toLowerCase();
-        for (String check : toIgnore) {
-            if (name.contains(check)) {
-                name = name.replace(check, "");
-            }
-        }
-        try {
-            return Material.valueOf(name.toUpperCase());
-        } catch (IllegalArgumentException e) {
-            return type;
-        }
     }
 
 }
