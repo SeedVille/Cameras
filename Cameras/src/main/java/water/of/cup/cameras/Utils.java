@@ -272,6 +272,10 @@ public class Utils {
         blocksMap.put(Material.WAXED_WEATHERED_CUT_COPPER_STAIRS, new Color(58, 142, 140));
         blocksMap.put(Material.COPPER_BLOCK, new Color(186, 103, 75));
         blocksMap.put(Material.WAXED_COPPER_BLOCK, new Color(186, 103, 75));
+        blocksMap.put(Material.WAXED_OXIDIZED_COPPER, new Color(61, 148, 147));
+        blocksMap.put(Material.WAXED_OXIDIZED_CUT_COPPER_STAIRS, new Color(61, 148, 147));
+        blocksMap.put(Material.WAXED_OXIDIZED_CUT_COPPER, new Color(61, 148, 147));
+        blocksMap.put(Material.WAXED_OXIDIZED_CUT_COPPER_SLAB, new Color(61, 148, 147));
         blocksMap.put(Material.LIGHTNING_ROD, new Color(186, 103, 75));
         blocksMap.put(Material.RAW_COPPER_BLOCK, new Color(186, 103, 75));
         blocksMap.put(Material.CUT_COPPER, new Color(186, 103, 75));
