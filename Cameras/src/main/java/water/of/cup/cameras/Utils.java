@@ -64,7 +64,6 @@ public class Utils {
         blocksMap.put(Material.COAL_BLOCK, new Color(19, 19, 19));
         blocksMap.put(Material.EMERALD_BLOCK, new Color(71, 213, 105));
         blocksMap.put(Material.LAPIS_BLOCK, new Color(42, 80, 139));
-        blocksMap.put(Material.WATER, new Color(67, 101, 165));
         blocksMap.put(Material.SEAGRASS, new Color(67, 101, 165));
         blocksMap.put(Material.BUBBLE_COLUMN, new Color(67, 101, 165));
         blocksMap.put(Material.TALL_SEAGRASS, new Color(67, 101, 165));
@@ -354,18 +353,18 @@ public class Utils {
         blocksMap.put(Material.AMETHYST_CLUSTER, new Color(110, 80, 164));
         blocksMap.put(Material.LEVER, new Color(130, 130, 130));
 
-        blocksMap.put(Material.RED_NETHER_BRICKS, new Color(65, 5, 7));
-        blocksMap.put(Material.RED_NETHER_BRICK_SLAB, new Color(65, 5, 7));
-        blocksMap.put(Material.RED_NETHER_BRICK_STAIRS, new Color(65, 5, 7));
-        blocksMap.put(Material.RED_NETHER_BRICK_WALL, new Color(65, 5, 7));
+        blocksMap.put(Material.RED_NETHER_BRICKS, new Color(112, 2, 0));
+        blocksMap.put(Material.RED_NETHER_BRICK_SLAB, new Color(112, 2, 0));
+        blocksMap.put(Material.RED_NETHER_BRICK_STAIRS, new Color(112, 2, 0));
+        blocksMap.put(Material.RED_NETHER_BRICK_WALL, new Color(112, 2, 0));
 
-        blocksMap.put(Material.NETHER_BRICKS, new Color(112, 2, 0));
-        blocksMap.put(Material.CHISELED_NETHER_BRICKS, new Color(112, 2, 0));
-        blocksMap.put(Material.CRACKED_NETHER_BRICKS, new Color(112, 2, 0));
-        blocksMap.put(Material.NETHER_BRICK_SLAB, new Color(112, 2, 0));
-        blocksMap.put(Material.NETHER_BRICK_STAIRS, new Color(112, 2, 0));
-        blocksMap.put(Material.NETHER_BRICK_WALL, new Color(112, 2, 0));
-        blocksMap.put(Material.NETHER_BRICK_FENCE, new Color(112, 2, 0));
+        blocksMap.put(Material.NETHER_BRICKS, new Color(65, 5, 7));
+        blocksMap.put(Material.CHISELED_NETHER_BRICKS, new Color(65, 5, 7));
+        blocksMap.put(Material.CRACKED_NETHER_BRICKS, new Color(65, 5, 7));
+        blocksMap.put(Material.NETHER_BRICK_SLAB, new Color(65, 5, 7));
+        blocksMap.put(Material.NETHER_BRICK_STAIRS, new Color(65, 5, 7));
+        blocksMap.put(Material.NETHER_BRICK_WALL, new Color(65, 5, 7));
+        blocksMap.put(Material.NETHER_BRICK_FENCE, new Color(65, 5, 7));
 
 
         blocksMap.put(Material.SMOOTH_SANDSTONE, new Color(213, 207, 162));

@@ -61,7 +61,7 @@ public class Renderer extends MapRenderer {
                 if (transparentWater) {
                     if (liquidResult != null) {
                         if (liquidResult.getHitBlock().getType().equals(Material.WATER))
-                            dye = new double[]{.5, .5, 1};
+                            dye = new double[]{0.2, 0.2, 0.8};
                         if (liquidResult.getHitBlock().getType().equals(Material.LAVA))
                             dye = new double[]{1, .3, .3};
                     }
