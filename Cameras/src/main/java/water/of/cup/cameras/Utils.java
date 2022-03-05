@@ -571,6 +571,9 @@ public class Utils {
         blocksMap.put(Material.ZOMBIE_WALL_HEAD, new Color(42, 70, 34));
         blocksMap.put(Material.CREEPER_HEAD, new Color(0, 159, 0));
         blocksMap.put(Material.CREEPER_WALL_HEAD, new Color(0, 159, 0));
+        blocksMap.put(Material.DRIPSTONE_BLOCK, new Color(76, 50, 35));
+        blocksMap.put(Material.POINTED_DRIPSTONE, new Color(76, 50, 35));
+        blocksMap.put(Material.VINE, new Color(0, 124, 0));
 
     }
 
